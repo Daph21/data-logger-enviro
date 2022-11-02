@@ -17,7 +17,8 @@ input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog()
     datalogger.setColumnTitles(
     "temp",
-    "lum"
+    "lum",
+    "son"
     )
 })
 input.onButtonPressed(Button.B, function () {
@@ -29,14 +30,16 @@ Logging = false
 basic.showIcon(IconNames.No)
 datalogger.setColumnTitles(
 "temp",
-"lum"
+"lum",
+"son"
 )
 loops.everyInterval(1000, function () {
     if (Logging) {
         basic.showIcon(IconNames.Heart)
         datalogger.log(
         datalogger.createCV("temp", input.temperature()),
-        datalogger.createCV("lum", input.lightLevel())
+        datalogger.createCV("lum", input.lightLevel()),
+        datalogger.createCV("son", input.soundLevel())
         )
     }
 })
