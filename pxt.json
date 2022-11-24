@@ -1,5 +1,5 @@
 {
-    "name": "Data logger Enviro",
+    "name": "Data logger lancer",
     "description": "",
     "dependencies": {
         "core": "*",

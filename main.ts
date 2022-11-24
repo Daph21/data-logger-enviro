@@ -29,17 +29,17 @@ let Logging = false
 Logging = false
 basic.showIcon(IconNames.No)
 datalogger.setColumnTitles(
-"temp",
-"lum",
-"son"
+"X",
+"Y",
+"Z"
 )
-loops.everyInterval(1000, function () {
+loops.everyInterval(100, function () {
     if (Logging) {
         basic.showIcon(IconNames.Heart)
         datalogger.log(
-        datalogger.createCV("temp", input.temperature()),
-        datalogger.createCV("lum", input.lightLevel()),
-        datalogger.createCV("son", input.soundLevel())
+        datalogger.createCV("X", input.acceleration(Dimension.X)),
+        datalogger.createCV("Y", input.acceleration(Dimension.Y)),
+        datalogger.createCV("Z", input.acceleration(Dimension.Z))
         )
     }
 })
